@@ -1,0 +1,88 @@
+{
+  "roll_number": "p26ai0006",
+  "seed_numeric_characters": "26006",
+  "split": {
+    "train": 45000,
+    "val": 5000,
+    "stratified": true,
+    "seed": 26006
+  },
+  "protocol": {
+    "optimizer": "adam",
+    "lr": 0.001,
+    "batch_size": 128
+  },
+  "epochs": {
+    "q1_mlp": 30,
+    "q1_memorisation": 25,
+    "q2_cnn_mlp": 30,
+    "q3_autoencoder": 12,
+    "q3_linear_probe": 30
+  },
+  "models": {
+    "mlp_s": "3072-256-128-10",
+    "mlp_m": "3072-512-256-10",
+    "mlp_l": "3072-1024-512-10",
+    "cnn_c": "Conv32-3x3, Pool, Conv64-3x3, Pool, FC4096-384, FC384-10",
+    "ae_bottlenecks": [
+      16,
+      64,
+      256
+    ],
+    "dae_bottleneck": 64
+  },
+  "q1": {
+    "noise_fraction": 0.2,
+    "shift_grid": [
+      0,
+      2,
+      4
+    ],
+    "augmentation": "pad4 random crop + horizontal flip"
+  },
+  "q2": {
+    "conditions": [
+      "clean",
+      "permuted",
+      "greyscale"
+    ],
+    "permutation_seed": 26007
+  },
+  "q3": {
+    "corruption": "gaussian",
+    "sigma": 0.15,
+    "reconstruction_space": "[0,1] pixels, MSE"
+  },
+  "q4": {
+    "representation": "CNN-C penultimate features, 384-d",
+    "subset_size": 10000,
+    "subset_seed": 26009,
+    "C": [
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "kernels": [
+      "linear",
+      "rbf",
+      "poly"
+    ],
+    "poly_degree": 3,
+    "rbf_gamma": "scale",
+    "clustering": {
+      "methods": [
+        "kmeans",
+        "gmm_diag"
+      ],
+      "k_grid": [
+        10,
+        15,
+        20,
+        30
+      ]
+    }
+  },
+  "protocol_note": "budget extended from 15 to 30 epochs uniformly for all Q1/Q2 comparison models before cross-model conclusions; decision based on unsaturated training accuracy only"
+}

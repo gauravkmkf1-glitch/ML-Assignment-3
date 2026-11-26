@@ -1,0 +1,13 @@
+name: ml-assignment3
+channels:
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - torch==2.15.0
+      - torchvision==0.29.2
+      - numpy==2.1.3
+      - scipy==1.14.1
+      - scikit-learn==1.5.2
+      - matplotlib==3.9.2

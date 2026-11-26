@@ -1,0 +1,9 @@
+dae64 epoch 1/15 train_mse 0.019219 val_mse_clean 0.018916 time 75s val_mse_corrupted 0.030463
+dae64 epoch 2/15 train_mse 0.010597 val_mse_clean 0.014946 time 74s val_mse_corrupted 0.028015
+dae64 epoch 3/15 train_mse 0.009371 val_mse_clean 0.014558 time 74s val_mse_corrupted 0.027299
+dae64 epoch 4/15 train_mse 0.008920 val_mse_clean 0.014751 time 79s val_mse_corrupted 0.027271
+dae64 epoch 5/15 train_mse 0.008758 val_mse_clean 0.012185 time 77s val_mse_corrupted 0.026950
+dae64 epoch 6/15 train_mse 0.008652 val_mse_clean 0.012923 time 77s val_mse_corrupted 0.026904
+dae64 epoch 7/15 train_mse 0.008555 val_mse_clean 0.012228 time 76s val_mse_corrupted 0.026865
+resuming dae64 at epoch 7
+dae64 epoch 8/15 train_mse 0.008480 val_mse_clean 0.012479 time 74s val_mse_corrupted 0.026837
